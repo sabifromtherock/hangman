@@ -39,7 +39,6 @@ public class Main {
 
     System.out.println();
     display.displayCurrentState(wordToGuess, guessedLetters);
-    System.out.println(wordToGuess);
 
     System.out.println();
     System.out.println("Guess a letter: ");
