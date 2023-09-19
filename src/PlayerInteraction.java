@@ -4,21 +4,27 @@ import java.util.Scanner;
 public class PlayerInteraction {
   private final Scanner scanner;
   private final ArrayList<Character> guessedLetters;
-  private static int lives;
+  private int lives;
 
-  public PlayerInteraction() {
+  public PlayerInteraction(int lives) {
     scanner = new Scanner(System.in);
     guessedLetters = new ArrayList<>();
-    lives = 5;
+    this.lives = lives;
   }
 
   public char captureGuess() {
-    char guess = scanner.next().charAt(0);
+    String input = scanner.next();
+    char guess = input.charAt(0);
+    if (input.length() != 1 || !Character.isLetter(guess)) {
+      System.out.println("Invalid input. Please enter a single letter.");
+      return captureGuess();
+    }
+
     guessedLetters.add(guess);
     return guess;
   }
 
-  public static int getLives() {
+  public int getLives() {
     return lives;
   }
 
