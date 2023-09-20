@@ -18,11 +18,7 @@ The player interacts with the game using the `Scanner` class to input their gues
    git clone https://github.com/sabifromtherock/hangman.git
    ```
 
-2. Run the game:
-
-   ```
-   java org.example.Main
-   ```
+2. Run the game by running the `main` method in the `Main` class.
 
 3. Choose a difficulty level:
 
