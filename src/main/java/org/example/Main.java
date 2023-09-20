@@ -1,3 +1,10 @@
+package org.example;
+
+
+import org.example.Display;
+import org.example.EasyGame;
+import org.example.HardGame;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
