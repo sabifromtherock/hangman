@@ -1,10 +1,5 @@
 package org.example;
 
-
-import org.example.Display;
-import org.example.EasyGame;
-import org.example.HardGame;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -20,7 +15,17 @@ public class Main {
     System.out.println("Let's play Hangman!");
     System.out.println("Choose a difficulty level: \n(1) Easy, \n(2) Medium, \n(3) Hard");
 
-    int choice = scanner.nextInt();
+    int choice;
+
+    while (true) {
+      if (scanner.hasNextInt()) {
+        choice = scanner.nextInt();
+        break;
+      } else {
+        System.out.println("Invalid input. Please enter a number (1, 2, or 3).");
+        scanner.next();
+      }
+    }
 
     PlayerInteraction playerInteraction;
 
@@ -38,8 +43,8 @@ public class Main {
         System.out.println("You have " + playerInteraction.getLives() + " lives.");
         break;
       default:
-        System.out.println("Invalid choice. Defaulting to Easy.");
-        playerInteraction = new EasyGame();
+        System.out.println("Invalid choice. Defaulting to Hard.");
+        playerInteraction = new HardGame();
         System.out.println("You have " + playerInteraction.getLives() + " lives.");
         break;
     }
